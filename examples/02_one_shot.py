@@ -1,7 +1,6 @@
 import sys
 from pathlib import Path
 
-# allow importing from project root
 sys.path.append(str(Path(__file__).resolve().parent.parent / "prompts"))
 
 from helper import get_completion
