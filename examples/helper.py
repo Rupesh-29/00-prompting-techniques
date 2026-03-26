@@ -1,12 +1,12 @@
-import os
 from dotenv import load_dotenv
 from google import genai
+import os
 
-load_dotenv()
+load_dotenv()  # Must be before getenv()
 
 print("API Key:", os.getenv("GEMINI_API_KEY"))
 
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))  # Capital C
 
 def get_completion(prompt, model="gemini-2.5-flash"):
     response = client.models.generate_content(
@@ -14,4 +14,5 @@ def get_completion(prompt, model="gemini-2.5-flash"):
         contents=prompt
     )
     return response.text
+
 print(get_completion("Say hello"))
