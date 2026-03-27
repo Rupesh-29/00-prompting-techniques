@@ -15,7 +15,7 @@ from google.genai import types
 
 load_dotenv()
 
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+Client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 system_instruction = """
 You are a beginner-friendly driving instructor.
@@ -26,7 +26,7 @@ Use a slightly fun tone, but do not become silly.
 
 user_message = "Teach me how to drive a car for the first time."
 
-response = client.models.generate_content(
+response = Client.models.generate_content(
     model="gemini-2.5-flash",
     contents=user_message,
     config=types.GenerateContentConfig(
