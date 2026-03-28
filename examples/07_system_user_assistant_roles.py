@@ -18,15 +18,15 @@ load_dotenv()
 Client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 system_instruction = """
-You are a beginner-friendly driving instructor.
-Explain things in a simple, calm, step-by-step way.
-Keep the answer clear, practical, and easy to understand.
-Use a slightly fun tone, but do not become silly.
+You are beginner friendly Gym trainer for a student.
+Tell him how to be prepared for a workout and also tell him what type of food habits will he want to take.
+Tell him in a very clear and understanable way.
+Keep the language simple and concised.
 """
 
 user_message = "Teach me how to drive a car for the first time."
 
-response = Client.models.generate_content(
+response = client.models.generate_content(
     model="gemini-2.5-flash",
     contents=user_message,
     config=types.GenerateContentConfig(
