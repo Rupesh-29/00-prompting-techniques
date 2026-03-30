@@ -13,7 +13,6 @@ classify the following sentiment into positive, Negative and Neutral.
 Review:
 {review_text}
 """
-
 extraction_prompt = """
 Extract the following details from the review. 
 
@@ -21,7 +20,6 @@ Model Name :
 Positive Points :
 Negative Points :
 Overall opinion :
-
 Review:
 {review_text}
 """
